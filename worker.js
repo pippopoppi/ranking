@@ -30,6 +30,12 @@ const GAMES = {
     valid: r => r.time >= 0 && r.time <= 3 * 3600 && r.score <= 3000 && r.score <= r.time * 3 + 5,
     cmp: (a, b) => b.score - a.score || a.time - b.time || (a.at || 0) - (b.at || 0),
   },
+  'void-vanguard': {
+    fields: ['level', 'kills', 'time'],   // score is per level; time = seconds the level lasted
+    // Kills are worth tens of points each, bosses 500, the level bonus a few hundred.
+    valid: r => r.level >= 1 && r.level <= 500 && r.time >= 0 && r.time <= 1800 && r.kills >= 0 && r.kills <= r.time * 6 + 10 && r.score <= r.time * 600 + 3000,
+    cmp: (a, b) => b.score - a.score || b.level - a.level || (a.at || 0) - (b.at || 0),
+  },
 };
 
 const headers = {

@@ -10,7 +10,7 @@ GET  https://ranking.pippopoppi.workers.dev/<gioco>?name=LOLLO  posizione di un 
 POST https://ranking.pippopoppi.workers.dev/<gioco>             { name, score, ...campi extra }
 ```
 
-Giochi registrati (in `GAMES` dentro `worker.js`): `croc-vs-pigeon`, `math-survival`.
+Giochi registrati (in `GAMES` dentro `worker.js`): `croc-vs-pigeon`, `math-survival`, `void-vanguard`.
 Ogni gioco dichiara i campi extra salvati e un controllo di plausibilità che rifiuta i
 punteggi impossibili. Il server conserva le prime 500 righe per gioco. Nessun account,
 nessuna email: solo il soprannome scelto dal giocatore.
